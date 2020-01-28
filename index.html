@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Zadatak</title>
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #box {
+        height: 600px;
+        width: 700px;
+        margin: 50px auto;
+        position: relative;
+        background: #000;
+    }
+    
+    #round {
+        height: 200px;
+        width: 200px;
+        position: relative;
+        border-radius: 50%;
+        margin: 0 auto;
+        top: 200px;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        animation: animacija 1.5s linear 1s infinite running;
+    }
+    
+    #round::before{
+        position: absolute;
+        content: '';
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        top: 20px;
+        left: 20px;
+        background: #000;
+    }
+    
+    #round::after{
+        position: absolute;
+        content: '';
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        top: 20px;
+        left: 20px;
+        background: #050210;
+        animation: animacija2 0.5s ease 1s infinite running;
+    }
+    
+    
+    @keyframes animacija{
+        0% {
+            transform: rotate(0deg);
+        }
+        
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes animacija2{
+        0% {
+            transform: scale(0.2);
+        }
+        
+        25% {
+            transform: scale(0.4);
+        }
+        
+        50% {
+            transform: scale(0.6);
+        }
+        
+        75% {
+            transform: scale(0.8);
+        }
+        
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    #round span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        z-index: -1;
+    }
+    
+    #round span:nth-child(1) {
+        filter: blur(5px);
+    }
+    
+    #round span:nth-child(2) {
+        filter: blur(10px);
+    }
+    
+    #round span:nth-child(3) {
+        filter: blur(25px);
+    }
+    
+    #round span:nth-child(4) {
+        filter: blur(50px);
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="round">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+    </div>
+    
+</body>
+</html>
